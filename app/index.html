@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Field Guide — GTA 6 Trophy Guide &amp; Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header id="topbar">
+  <div class="brand">
+    <div class="brand-mark" aria-hidden="true">LG</div>
+    <div>
+      <h1>LEONIDA FIELD GUIDE</h1>
+      <p class="subtitle">GTA VI — all 55 PS5 trophies, cited guides, roadmap to platinum. Works offline.</p>
+    </div>
+  </div>
+  <div class="progress-block" id="progressBlock">
+    <div class="progress-count"><span id="earnedCount">0</span> / 55 earned</div>
+    <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+    <div class="progress-note" id="progressNote">Platinum: Vice Got a Price! — 0% there</div>
+  </div>
+</header>
+
+<nav id="viewTabs" aria-label="Views">
+  <button type="button" data-view="dashboard" class="tab active">Dashboard</button>
+  <button type="button" data-view="library" class="tab">Library <span id="libraryCount">55</span></button>
+  <button type="button" data-view="roadmap" class="tab">Roadmap</button>
+</nav>
+
+<main id="main">
+  <section id="view-dashboard" class="view">
+    <div class="dash-grid">
+      <div class="dash-left">
+        <article id="nextUpCard" class="card next-up">
+          <h2>Next up</h2>
+          <div id="nextUpBody"><p class="muted">Loading trophies…</p></div>
+        </article>
+        <article id="missableCard" class="card warning">
+          <h2>Do before advancing</h2>
+          <p><strong>1 missable trophy.</strong> <span id="missableName">Positive Mental Attitude</span> (#28) is the game's one potentially missable trophy (PowerPyx): meditate at Jason's house after the mission “Down to Earth”, when Lucia is on the balcony — choose “Accept”. There is no mission replay. Do it before the story moves on.</p>
+          <p class="muted small">Every other trophy can be earned after the story, in free roam.</p>
+        </article>
+      </div>
+      <div class="dash-right">
+        <article class="card" id="gradeCard">
+          <h2>By grade</h2>
+          <ul id="gradeStats" class="stat-list"></ul>
+        </article>
+        <article class="card" id="kindCard">
+          <h2>By kind</h2>
+          <ul id="kindStats" class="stat-list"></ul>
+        </article>
+        <article class="card" id="phaseCard">
+          <h2>Roadmap at a glance</h2>
+          <ol id="phaseSummary" class="phase-list"></ol>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="view-library" class="view" hidden>
+    <div id="filterBar" class="card filters">
+      <input id="searchInput" type="search" placeholder="Search trophies…" aria-label="Search trophies">
+      <select id="gradeFilter" aria-label="Filter by grade">
+        <option value="">All grades</option>
+        <option value="platinum">Platinum</option>
+        <option value="gold">Gold</option>
+        <option value="silver">Silver</option>
+        <option value="bronze">Bronze</option>
+      </select>
+      <select id="kindFilter" aria-label="Filter by kind">
+        <option value="">All kinds</option>
+        <option value="story">Story</option>
+        <option value="activity">Activity</option>
+        <option value="combat">Combat</option>
+        <option value="collectible">Collectible</option>
+        <option value="misc">Misc</option>
+      </select>
+      <select id="earnedFilter" aria-label="Filter by earned state">
+        <option value="">Earned + unearned</option>
+        <option value="earned">Earned only</option>
+        <option value="unearned">Unearned only</option>
+      </select>
+      <label class="spoiler-toggle"><input id="spoilerToggle" type="checkbox" checked> Hide story spoilers</label>
+      <button type="button" id="exportBtn">Export JSON</button>
+      <button type="button" id="importBtn">Import JSON</button>
+      <input id="importFile" type="file" accept="application/json" hidden>
+    </div>
+    <p id="resultCount" class="muted small"></p>
+    <ul id="trophyList" class="trophy-list"></ul>
+    <article id="guideDetail" class="card guide-detail" hidden>
+      <button type="button" id="detailClose" class="close-btn" aria-label="Close guide">×</button>
+      <div id="guideDetailBody"></div>
+    </article>
+  </section>
+
+  <section id="view-roadmap" class="view" hidden>
+    <article class="card warning">
+      <h2>Do before advancing</h2>
+      <p><strong>Positive Mental Attitude (#28) — missable.</strong> Meditate at Jason's house after “Down to Earth” (Lucia on the balcony, choose “Accept”). PowerPyx lists it as the game's one potentially missable trophy. No mission replay — do it before the story moves on.</p>
+    </article>
+    <div id="roadmapPhases"></div>
+  </section>
+</main>
+
+<footer id="pageFooter">
+  <p>Leonida Field Guide — an unofficial fan guide. Grand Theft Auto and GTA are trademarks of Take-Two Interactive; this guide uses no Rockstar logo, artwork or game screenshots. Trophy names and descriptions as published by PlayStation. Guides in our own words; sources cited beside each guide (PowerPyx, Exophase). Progress is stored only in your browser.</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
